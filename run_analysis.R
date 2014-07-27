@@ -30,7 +30,13 @@ testDataDF$Subject <- testSubjectDF$V1
 # Merge the datasets
 requiredData <- rbind(testDataDF, trainDataDF)
 
-# rm(trainDataDF, trainActivityDF, trainSubjectDF, testDataDF, testActivityDF, testSubjectDF)
+rm(trainDataDF, trainActivityDF, trainSubjectDF, testDataDF, testActivityDF, testSubjectDF)
+
+# Set the activity column names as factors with labels
+requiredData$Activity <- factor(requiredData$Activity, labels = activityLabels$V2)
+
+# Define Subjects as a factor
+requiredData$Subject <- as.factor(requiredData$Subject)
 
 # Get all required names. 
 requiredFactors <- c("Activity", "Subject")
@@ -65,12 +71,6 @@ for (i in colnames(requiredData)) {
         requiredData[[i]] <- NULL
     }       
 }
-
-# Set the activity column names as factors with labels
-requiredData$Activity <- factor(requiredData$Activity, labels = activityLabels$V2)
-
-# Define Subjects as a factor
-requiredData$Subject <- as.factor(requiredData$Subject)
 
 # Create the tidy dataset and initialize it as a empty data frame
 tidyData <- data.frame()

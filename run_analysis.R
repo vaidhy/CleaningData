@@ -97,4 +97,4 @@ for (subject in levels(requiredData$Subject)) {
 }
 
 # Finally write the csv file
-write.csv(tidyData, "tidydata.csv")
+write.csv(tidyData, "tidydata.txt")

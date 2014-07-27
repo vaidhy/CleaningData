@@ -33,4 +33,13 @@ The set of variables that were estimated from these signals are:
 mean(): Mean value
 std(): Standard deviation
 
-The total set of all the variables is 66.
+All these varaibles are given by Subject and Activity. Subject ranges from 1-30. The following activites are tracked:
+
+1. WALKING
+2. WALKING_UPSTAIRS
+3. WALKING_DOWNSTAIRS
+4. SITTING
+5. STANDING
+6. LAYING
+
+The cleaned up dataset contains the average of each of the signal measured by subject and activity during the entire period. 
